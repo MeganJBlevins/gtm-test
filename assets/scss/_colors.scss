@@ -1,0 +1,39 @@
+$red: #E70A07; // saucecraft red
+$dred: #92151A; // saucecraft success background
+$indigo: black;
+$yellow: #FCEBA9;
+$lyellow: #FFF8DE;
+$lgreen: #ABD0A0; // HVR light green
+$bgreen: #07AA4C; // hvr bright Green
+$green: #3A8A27; // HVR Green
+$dgreen: #276217; // HVR Dark Green
+$blue: #007AB4; // HVR Blue
+$lblue:  #119DFF; // HVR Light Blue
+
+$green0: #F8E59A;
+$green1: #276217; // HVR Dark Green
+$green2: #A4C961;
+$green3: #5D9142;
+$green4: #56893D;
+$green5: #73A859;
+$green6: #2A5A13;
+$green7: #3C7122;
+
+$black: #404040;
+$dgray: #666666; // HVR Dark Gray
+$gray: #ABABAB; // HVR Gray
+$lgray: #707070; // HVR Light Gray
+$llgray: #F2F2F1;// HVR Light Light Gray
+$gray2: #7F7F7F; // HVR Light Gray 2
+$gray3: #CCCCCC; // HVR Light Gray 3
+$greyOpacity: rgba(218, 217, 215, .35);
+$white: #fff;
+
+/* aliases */
+$text: $dgray;
+$text-light: $white;
+$error: $red;
+$primary: $black;
+$secondary: $red;
+$clickable: $red;
+$clickable-hover: lighten($red, 20%);

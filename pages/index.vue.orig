@@ -1,0 +1,163 @@
+<template>
+  <section class="container">
+    <div>
+      <h1 class="title">
+        nuxt-site-base
+      </h1>
+      <h2 class="subtitle">
+        A site template using nuxt.js
+      </h2>
+      <h2>testing</h2>
+      <LeadCollection db-collection="Nuxt Base Collection Test" site-key="6Le-940UAAAAAAgnWJwbfxpTOA4DQ3e-gQ7akxOC" mail-to="bdnorris@gmail.com" mail-from="noreply@briannorris.io" />
+      <FormCollection db-collection="Nuxt Base Collection Test" site-key="6Le-940UAAAAAAgnWJwbfxpTOA4DQ3e-gQ7akxOC" mail-to="bnorris@marlinnetwork.com" mail-from="noreply@briannorris.io" />
+      <FormCollectionAT
+        db-collection="Nuxt Base Collection Test"
+        site-key="6Le-940UAAAAAAgnWJwbfxpTOA4DQ3e-gQ7akxOC"
+        mail-to="meganjblevins@gmail.com"
+        mail-from="noreply@briannorris.io"
+        at-api="keyeKovmQLeCAOEJ3"
+        at-base-id="appGZXbK0j0tjEpqU"
+      />
+    </div>
+    <hooper :settings="hooperSettings">
+      <hooper-progress slot="hooper-addons" />
+      <slide>
+        <h3>slide 1</h3>
+        <p>Lorem</p>
+      </slide>
+      <slide>
+        <h3>slide 2</h3>
+        <p>Lorem</p>
+      </slide>
+      <slide>
+        <h3>slide 3</h3>
+        <p>Lorem</p>
+      </slide>
+      <slide>
+        <h3>slide 4</h3>
+        <p>Lorem</p>
+      </slide>
+      <hooper-navigation slot="hooper-addons" />
+      <hooper-pagination slot="hooper-addons" />
+    </hooper>
+    <Modal modal-title="My modal title">
+      <template slot="activator">
+        <span>Modal</span>
+      </template>
+      <template slot="content">
+        <h1>Modal Content</h1>
+        <p>Lorem</p>
+        <button type="button">
+          Affirmative
+        </button>
+      </template>
+      <template slot="close-button">
+        &times;
+      </template>
+    </Modal>
+    <AccordionItem>
+      <template v-slot:header>
+        For Breakfast Lovers
+      </template>
+      <template v-slot:content>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget aliquet scelerisque. Pellentesque sodales turpis vitae venenatis vehicula. Ut id porta velit. Ut eu dignissim dui, quis gravida est. Cras quis venenatis mauris, a bibendum enim. Sed at augue libero. Nullam tortor metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum risus facilisis imperdiet quis sed eros.</p>
+      </template>
+    </AccordionItem>
+    <AccordionItem>
+      <template v-slot:header>
+        Something 2
+      </template>
+      <template v-slot:content>
+        <p>Quisque commodo purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget aliquet scelerisque. Pellentesque sodales turpis vitae venenatis vehicula. Ut id porta velit. Ut eu dignissim dui, quis gravida est. Cras quis venenatis mauris, a bibendum enim. Sed at augue libero. Nullam tortor metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum risus facilisis imperdiet quis sed eros.</p>
+      </template>
+    </AccordionItem>
+    <ResponsiveTabs />
+  </section>
+</template>
+
+<script>
+import {
+  Hooper,
+  Slide,
+  Pagination as HooperPagination,
+  Navigation as HooperNavigation,
+  Progress as HooperProgress
+} from 'hooper'
+
+import LeadCollection from '~/components/Forms/LeadCollection.vue'
+import FormCollection from '~/components/Forms/FormCollection.vue'
+import FormCollectionAT from '~/components/Forms/FormCollectionAT.vue'
+import Modal from '~/components/UI/Modal.vue'
+import AccordionItem from '~/components/UI/AccordionItem.vue'
+import ResponsiveTabs from '~/components/UI/ResponsiveTabs.vue'
+import { pageview } from '~/mixins/gtm.js'
+
+export default {
+  components: {
+    LeadCollection,
+    FormCollection,
+    FormCollectionAT,
+    Modal,
+    Hooper,
+    Slide,
+    HooperPagination,
+    HooperNavigation,
+    HooperProgress,
+    AccordionItem,
+    ResponsiveTabs
+  },
+  mixins: [pageview],
+  data () {
+    return {
+      hooperSettings: {
+        itemsToShow: 1,
+        centerMode: true,
+        infiniteScroll: true,
+        wheelControl: false,
+        keysControl: true,
+        transition: 400,
+        breakpoints: {
+          800: {
+            itemsToShow: 1
+          },
+          1000: {
+            itemsToShow: 1
+          }
+        }
+      },
+      title: 'Nuxt Js Base'
+    }
+  },
+  head () {
+    return {
+      title: this.title, // this title is placed at the start, according to the title template in nuxt.config.js
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        { hid: 'description', name: 'description', content: 'My custom description' }, // If you remove this description, or comment it out, the page will use the description in nuxt.config.js
+        { property: 'og:site_name', content: '' },
+        { property: 'og:title', content: '' },
+        { property: 'og:description', content: '' },
+        { property: 'og:image', content: '' }
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '~assets/scss/variables';
+@import '~assets/scss/colors';
+@import '~assets/scss/vendor/index';
+
+h2 {
+  color: tomato;
+  @include breakpoint(medium up) {
+    color: $text;
+  }
+}
+
+.hooper {
+  background-color: gray;
+}
+
+</style>

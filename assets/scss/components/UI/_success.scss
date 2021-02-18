@@ -1,0 +1,39 @@
+.success__container {
+  padding-top: 40px;
+  text-align: center;
+  padding-left: em(20);
+  padding-right: em(20);
+  background-color: $lgreen;
+  @include breakpoint($medium){
+    padding-top: calc(100% - 330px);
+  }
+  @include breakpoint($large);
+  .success-check {
+    margin: 0 auto;
+    background-color: $dgreen;
+    background-image: svg-uri($successCheck);
+    background-position: center center;
+    background-size: 57px;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 50%;
+    height: 92px;
+    width: 92px;
+  }
+  h1 {
+    font-family: $gothicBlack;
+    color: $green1;
+    font-size: em(50);
+    max-width: 300px;
+    margin: .6em auto;
+  }
+  p {
+    margin: 10px 0;
+    font-size: em(18);
+    color: $black;
+    a {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.table {
+  margin-top: 50px;
+  padding-top: 25px;
+  background-color: $red;
+  padding-bottom: 60px;
+  @include breakpoint($large){
+    padding-top: 30px;
+    margin-top: 60px;
+  }
+}
+.innovative__header{
+  padding: 0 10%;
+  @include breakpoint($medium){
+    padding: 0;
+  }
+  img{
+    margin: 0 auto;
+  }
+}
+.innovative__desktop {
+  display: none;
+  @include breakpoint($medium){
+    display: block;
+  }
+}
+.innovative__mobile {
+  display: block;
+  @include breakpoint($medium){
+    display: none;
+  }
+}
+.table__container{
+  @include default-sizing($medLarge);
+}
+.table__header {
+  max-width: 650px;
+  margin: 0 auto;
+  p {
+    font-family: $gothic;
+    line-height: 32px;
+    color: #fff;
+    text-align: center;
+    @include breakpoint($medium){
+      padding: 0 2em 1em;
+    }
+  }
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  background-color: #fff;
+  thead {
+    background-color: $dred;
+    color: #fff;
+    text-shadow: 2px 2px rgba(0,0,0,.16);
+    th {
+      font-size: 12px;
+      padding: 5px 8px 5px 6px;
+      border-right: 1px solid rgba(231, 10, 7, .3);
+      text-align: left;
+      @include breakpoint($medium){
+        padding: 8px 45px 8px 10px;
+        font-size: 14px;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+  td {
+    font-size: 12px;
+    padding: 5px 8px 5px 6px;
+    line-height: 18px;
+    color: $dgray;
+    border-right: 1px solid rgba(148, 150, 153, .3);
+    @include breakpoint($medium){
+      font-size: 14px;
+      padding: 8px 15px 8px 10px;
+    }
+  }
+  tr {
+    border-bottom: 1px solid rgba(231, 10, 7, .3);
+    &:nth-child(even) {
+      background: $llgray;
+    }
+
+  }
+}
+.table__body{
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+.table-heading {
+  background-color: $lgray!important;
+  td{
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    border-right: none;
+  }
+}
+.new-flag{
+  position: absolute;
+  bottom: 81px;
+  background-color: #10A221;
+  transform: rotate(270deg);
+  left: -108px;
+  width: 189px;
+  @include breakpoint($medSm){
+    bottom: 54px;
+    left: -81px;
+    width: 135px;
+  }
+  @include breakpoint(467px){
+    bottom: 45px;
+    left: -72px;
+    width: 117px;
+  }
+  @include breakpoint($medium){
+    bottom: 51px;
+    left: -91px;
+    width: 142px;
+  }
+  p{
+    font-size: 18px;
+    padding: 0px;
+    margin: 1px 0 -1px 0;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    text-align: center;
+    @include breakpoint($medium){
+      margin: 5px 5px 5px 5px;
+      font-size: 21px;
+    }
+  }
+}

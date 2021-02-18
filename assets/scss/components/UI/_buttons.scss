@@ -1,0 +1,21 @@
+.button {
+  font-family: $gothic;
+  font-weight: 800;
+  display: block;
+  text-transform: uppercase;
+  background-color: $blue;
+  border-radius: 30px;
+  color: #fff;
+  margin: 20px auto;
+  padding: 21px 39px 18px;
+  text-align: center;
+  font-size: 23px;
+  // text-shadow: 2px 2px rgba(0,0,0,.3);
+  &:hover {
+    cursor: pointer;
+    background-color: $lblue;
+  }
+  @include breakpoint($medium){
+    font-size: em(24);
+  }
+}

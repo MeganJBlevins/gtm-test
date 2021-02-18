@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'HVRFranchiseRounded-Bold';
+  src: url('~assets/fonts/HVRFranchiseRounded-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('~assets/fonts/Gotham-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Gotham-Black';
+  src: url('~assets/fonts/Gotham-Black.ttf') format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $green;
+}
+
+// Scale based on Jason Pamental's
+// http://typecast.com/blog/a-more-modern-scale-for-web-typography
+
+h1, .h1 {
+  font-family: $hvr;
+  font-weight: 900;
+  font-size: em(38);
+  text-transform: uppercase;
+  margin: .2em 0;
+  @include breakpoint($tablet) {
+    font-size: em(65);
+  }
+  @include breakpoint($xxlarge) {
+    font-size: em(90);
+  }
+}
+
+h2, .h2 {
+  font-family: $hvr;
+  font-weight: 900;
+  line-height: 1.153;
+  letter-spacing: -0.5px;
+  font-size: em(26);
+  @include breakpoint(large) {
+    font-size: em(32);
+    line-height: 1.25;
+  }
+  @include breakpoint(xlarge) {
+    font-size: em(36);
+  }
+}
+
+h3 {
+  font-family: $hvr;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  font-size: 16px;
+  @include breakpoint($medium){
+    font-size: 22px;
+  }
+  @include breakpoint($xxlarge) {
+    font-size: 23px;
+  }
+}
+
+h4, .h4 {
+  font-family: $hvr;
+  font-weight: 800;
+  line-height: 1.111;
+  letter-spacing: 0.25px;
+  font-size: em(18);
+  color: $text-light;
+  letter-spacing: .2px;
+  @include breakpoint(large) {
+    font-size: em(18);
+    line-height: 1.222;
+  }
+}
+
+a {
+  color: $clickable;
+  text-decoration: none;
+}
+
+p, .p {
+  font-family: $gothic;
+  font-weight: 400;
+  color: $text;
+  line-height: 1.5;
+  font-size: 15px;
+  letter-spacing: .2px;
+  margin-top: .5em;
+  margin-bottom: .5em;
+ @include breakpoint($medium){
+   font-size: 16px;
+ }
+ @include breakpoint($xxlarge){
+   font-size: 21px;
+ }
+}
+
+.h3{
+  font-size: em(18);
+  font-weight: 700;
+  @include breakpoint($medium){
+    font-size: em(21);
+  }
+  @include breakpoint($large) {
+    line-height: 1.375;
+    font-size: em(21);
+  }
+  @include breakpoint($xlarge){
+    font-size: em(23);
+  }
+  @include breakpoint($xxlarge){
+    font-size: em(26);
+  }
+}
+sup {
+  font-size: 50%;
+  vertical-align: middle;
+}
+.light {
+  color: $lgreen;
+}

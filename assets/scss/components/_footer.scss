@@ -1,0 +1,55 @@
+// * General footer or site footer styles
+.footer {
+  border-bottom: 14px solid $bgreen;
+  background-color: $dgreen;
+  padding-top: 40px;
+  padding-bottom: 100px;
+  @include breakpoint($tablet){
+    padding-bottom: 40px;
+    border-bottom-width: 28px;
+  }
+}
+.footer__container{
+  @include default-sizing($xlarge);
+  text-align: center;
+  position: relative;
+  @include breakpoint($large){
+    padding-right: 85px;
+    display: flex;
+    align-items: center;
+  }
+  @include breakpoint($xlarge){
+    padding-right:  2.3em;
+  }
+}
+.disclaimer {
+  text-align: center;
+  flex: 1;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1em;
+  @include breakpoint($large){
+    text-align: left;
+  }
+}
+.privacy {
+  flex: 1;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  a {
+    color: #fff;
+    text-decoration: underline;
+    font-size: 12px;
+  }
+}
+.ventura-logo {
+  flex: 1;
+  margin: 0 auto;
+  text-align: center;
+  @include breakpoint($large){
+    text-align: right;
+  }
+  svg {
+    max-width: 190px;
+  }
+}

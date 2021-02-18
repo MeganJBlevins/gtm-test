@@ -1,0 +1,50 @@
+// Breakpoints
+// These are used in the foundation breakpoint mixin
+// Since I code mobile first, I use breakpoints that are 1 pixel higher than common sizes
+$xsmall:   0;
+$small:  374px;
+$medSm: 410px;
+$medium:   667px;
+$tablet: 768px;
+$medLarge: 900px;
+$large:  1023px;
+$larger: 1280px;
+$xlarge: 1366px;
+$xxlarge: 1920px;
+
+
+// Useful in the default-sizing mixin
+$mobile-margin: 1.8em;
+$desktop-margin: 4em;
+
+// Type
+$browser-context: 16;
+$hvr: 'HVRFranchiseRounded-Bold', sans-serif;
+$gothic: 'Gotham-Medium', sans-serif;
+$gothicBlack: 'Gotham-Black', sans-serif;
+
+
+// Animation
+$default-timing: 200ms;
+
+// Layers, add more in between breakpoints if you need. 
+// use map-get to access. 
+// z-index: map-get($z, 1)
+// https://sass-lang.com/documentation/functions/map#map-get
+$z: (
+  1: 10,
+  2: 20,
+  3: 30,
+  4: 40,
+  5: 50,
+  6: 60,
+  7: 70,
+  8: 80,
+  9: 90,
+  10: 100,
+  top: 1000
+);
+
+$mobileLogo: 120px;
+$tabletLogo: 190px;
+$desktopLogo: 230px;

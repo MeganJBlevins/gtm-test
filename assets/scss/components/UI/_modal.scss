@@ -1,0 +1,216 @@
+body.fixed {
+  position: fixed; 
+}
+.modal__open {
+  border-radius: 0;
+  pointer-events: all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  left: 0;
+  right: 0;
+  height: calc(90px + env(safe-area-inset-bottom));
+  width: 100vw;
+  position: absolute;
+  background-color: $blue;
+  text-align: center;
+  z-index: 20;
+  & > div {
+    left: 0;
+    bottom: 0;
+    flex: 0 0 auto;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $lblue;
+  }
+  @include breakpoint($tablet){
+    height: 250px;
+    width: 55px;
+    padding: 0.25em;
+    top: calc(100vh - 400px);
+    border-radius: 30px 0 0 30px;
+  }
+  & > div {
+    p {
+      position: relative;
+      font-weight: 700;
+      font-family: $gothicBlack;
+      text-transform: uppercase;
+      color: $white;
+      margin: 0;
+      font-size: 22px;
+      line-height: .5em;
+      @include breakpoint($tablet) {
+        font-size: 23px;
+        width: 190px;
+        line-height: 1.5em;
+        padding-right: 13px;
+      }
+      .icon {
+        width: 32px;
+        height: 32px;
+        display: inline-block;
+        background-size: cover;
+        background-position: center;
+        background-position-x: -1px;
+        background-position-y: 0px;
+        border: 2px solid $white;
+        border-radius: 50%;
+        position: relative;
+        top: 10px;
+        right: -8px;
+        background-image: svg-uri($plus);
+        @include breakpoint($tablet){
+          position: absolute;
+          top: 2px;
+          right: -13px;
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+    @include breakpoint($tablet) {
+      margin: 0;
+      // position: relative;
+      // width: 240px;
+      // left: -85px;
+      // top: 20px;
+      p {
+        transform: rotate(90deg);
+        // padding-right: 1.5em;
+      }
+    }
+  }
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,.5);
+  transition: background-color .2s ease;
+  z-index: 20;
+}
+.modal {
+  position: fixed;
+  transform: translateY(calc(100% - 90px - env(safe-area-inset-bottom)));
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 620px;
+  transition: transform 600ms ease;
+  margin-left: 0;
+  margin-right: 0;
+  pointer-events: none;
+  z-index: 20;
+  &.open {
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+    background-color: white;
+    pointer-events: all;
+    transform: translateY(0)!important;
+    z-index: 99;
+    .modal__open {
+      top: 0;
+      display: flex;
+      height: 90px;
+      border-radius: 0 0 30px 30px;
+      @include breakpoint($tablet){
+        top: calc(100vh - 400px);
+        height: 250px;
+        border-radius: 30px 0 0 30px
+      }
+      .icon {
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+  &.success {
+    .modal-wrapper__inner {
+      background-color: $lgreen;
+    }
+    .modal__open:hover {
+      background-color: $green;
+    }
+    .modal__open {
+      background-color: $dgreen;
+    }
+  }
+  @include breakpoint($tablet) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    transform: translate(480px, 0);
+    padding-left: 55px;
+    width: 535px;
+    &.open {
+      background-color: transparent;
+      transform: translate(0, 0);
+      // left: calc(100% - 542px);
+      .modal__open {
+        width: 55px;
+        // left: calc(100% - 611px);
+        right: 542px;
+      }
+      .form-wrapper {
+        background-color: white;
+      }
+    }
+  }
+}
+
+.modal-wrapper__inner {
+  position: relative;
+  overflow-y: scroll;
+  background-color: white;
+  padding-top: 8em;
+  padding-bottom: 70px;
+  // width: 103vw;
+  height: 103vh;
+  min-height: 103vh;
+  max-height: 100vh;
+  @include breakpoint($tablet) {
+    padding-top: 3em;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: background-color .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  background-color: transparent;
+}
+
+
+@media screen and (max-width: 768px){
+// trying to fix iOS browser bottom nav overlap
+  _::-webkit-full-page-media, _:future, :root .modal__open {
+      height: calc(200px + env(safe-area-inset-bottom,.5vh));
+      justify-content: unset;
+  }
+
+  _::-webkit-full-page-media, _:future, :root .modal {
+    transform: translateY(calc(100vh - 140px - env(safe-area-inset-bottom)));
+    &.open {
+      transform: translateY(0);
+    }
+  }
+  _::-webkit-full-page-media, _:future, :root .modal .modal__open {
+    padding-top: 0px;
+  }
+  _::-webkit-full-page-media, _:future, :root .modal.shrink {
+    transform: translateY(calc(100vh - 90px - env(safe-area-inset-bottom)));
+    &.open {
+      transform: translateY(0);
+    }
+  }
+}

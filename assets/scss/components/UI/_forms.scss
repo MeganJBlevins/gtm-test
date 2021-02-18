@@ -1,0 +1,211 @@
+// * forms and form input styling
+.form-wrapper {
+  @include default-sizing($large);
+}
+.form-area{
+  display: flex;
+  input {
+    padding: 8px 1em;
+  }
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+textarea {
+  background-color: $lyellow;
+  border: 1px solid $gray;
+  border-radius: 0 8px 8px 0;
+  font-size: 16px;
+  padding: 8px 1em;
+  width: 100%;
+  max-height: 46px;
+}
+input {
+  float: left; 
+  width: calc(100% - 40px);
+}
+.form-container{
+  padding: 16px 41px 35px;
+  p {
+    font-size: 12px;
+  }
+}
+fieldset {
+  border: none;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+/// icons styling
+
+fieldset .icon {
+  float: left;
+  background-color: $blue;
+  height: 40px;
+  width: 46px;
+  border-radius: 5px 0px 0px 5px;
+  background-size: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  &.user {
+    background-image: svg-uri($user);
+  };
+  &.operation {
+    background-image: svg-uri($operation);
+  };
+  &.location {
+    background-image: svg-uri($location);
+  };
+  &.zip {
+    background-image: svg-uri($zip);
+  };
+  &.phone {
+    background-image: svg-uri($phone);
+  };
+  &.email {
+    background-image: svg-uri($email);
+  };
+  &.cases {
+    background-image: svg-uri($cases);
+  };
+}
+
+// radio styling
+/* Customize the label (the container) */
+.radio {
+  & > label {
+    margin-bottom: 5px;
+  }
+  .radio-button {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    input {
+      float: none;
+      width: 25px;
+      opacity: 0;
+    }
+    .checkmark {
+      border: 1px solid $lgray;
+      background-color: $lyellow;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    input:checked ~ .checkmark  {
+      background-size: cover;
+      background-position: center center;
+      background-image: svg-uri($checked);
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background-color: $blue;
+      }
+    }
+    
+  }
+  
+}
+button[type="submit"]{
+  padding: 15px 30px;
+  border-radius: 34px;
+  background-color: $blue;
+  color: $white;
+  margin-bottom: 30px;
+  box-shadow:
+    // inset 0 0 2px 0 rgba(255,255,255,.4),
+    // inset 0 0 3px 0 rgba(0,0,0,.4),
+    inset 0 0 3px 5px rgba(0,0,0,.05),
+    2px 2px 4px 0 rgba(0,0,0,.25);
+  &:hover {
+    background-color: $lblue;
+    cursor: pointer;
+  }
+  span {
+    font-size: 22px;
+    font-family: $gothicBlack;
+  }
+}
+// select styling
+// https://codepen.io/bdnorris/pen/BMorpx
+// https://www.filamentgroup.com/lab/select-css.html
+
+.select-css {
+  display: block;
+  font-size: 16px;
+  font-family: $gothic;
+  color: $black;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  width: 60%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0 8px 8px 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $white;
+  background-image: svg-uri($selectArrow);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 13px auto, 100%;
+}
+.select-css::-ms-expand {
+  display: none;
+}
+.select-css:hover {
+  border-color: #888;
+}
+.select-css:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
+}
+.select-css option {
+  font-weight: normal;
+}
+
+
+/// error handline 
+.form-error {
+  text-align: right;
+  font-size: 16px;
+  color: $red;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  .error-icon{
+    height: 18px;
+    width: 16px;
+    background-image: svg-uri($error);
+    background-position: bottom center;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-right: 3px;
+  }
+}
+.input-error {;
+  .icon {
+    background-color: $red;
+  }
+  input, select {
+    border: 1px solid $red;
+  }
+}
+.recaptcha-checkbox {
+  margin-bottom: 20px;
+}

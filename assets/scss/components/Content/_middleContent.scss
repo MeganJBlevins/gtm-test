@@ -1,0 +1,66 @@
+.middle-content {
+  background-color: $greyOpacity;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  @include breakpoint($xlarge){
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+}
+.middle-content__container {
+  @include default-sizing($xxlarge);
+  text-align: center;
+  h1 {
+    max-width: 221px;
+    margin: 0 auto;
+    @include breakpoint($tablet){
+      max-width: 4000px;
+      font-size: 80px;
+    }
+    @include breakpoint($large){
+      display: inline-block;
+    }
+    @include breakpoint($xlarge){
+      font-size: 100px;
+    }
+    @include breakpoint($xxlarge) {
+      font-size: 120px;
+    }
+  }
+  img {
+    max-width: 122px;
+    margin: 0px auto 20px;
+    @include breakpoint($tablet){
+      max-width: 144px;
+    }
+    @include breakpoint($large){
+      max-width: 180px;
+      margin: 0 auto;
+      display: block;
+      top: 15px;
+      position: relative;
+      margin-bottom: 50px;
+    }
+    @include breakpoint($larger){
+      display: inline-block;
+      margin-bottom: 0;
+    }
+    @include breakpoint($xlarge){
+      max-width: 180px;
+      margin-bottom: 0;
+    }
+    @include breakpoint($xxlarge) {
+      max-width: 195px;
+    }
+  }
+  button {
+    font-size: 18px;
+    padding: 17px 39px 14px;
+    @include breakpoint($tablet){
+      font-size: 22px;
+    }
+    @include breakpoint($xlarge){
+      font-size: 30px;
+    }
+  }
+}

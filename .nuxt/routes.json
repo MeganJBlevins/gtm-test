@@ -1,0 +1,34 @@
+[
+  {
+    "name": "404",
+    "path": "/404",
+    "component": "/Users/meganblevins/Webapps/hvr-landing/pages/404.vue",
+    "chunkName": "pages/404",
+    "url": "/404",
+    "_name": "_0bb9c2c3"
+  },
+  {
+    "name": "about",
+    "path": "/about",
+    "component": "/Users/meganblevins/Webapps/hvr-landing/pages/about/index.vue",
+    "chunkName": "pages/about/index",
+    "url": "/about",
+    "_name": "_6d41be5b"
+  },
+  {
+    "name": "async-api",
+    "path": "/async-api",
+    "component": "/Users/meganblevins/Webapps/hvr-landing/pages/async-api/index.vue",
+    "chunkName": "pages/async-api/index",
+    "url": "/async-api",
+    "_name": "_1f6f4197"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/meganblevins/Webapps/hvr-landing/pages/index.vue",
+    "chunkName": "pages/index",
+    "url": "/",
+    "_name": "_2809d49d"
+  }
+]

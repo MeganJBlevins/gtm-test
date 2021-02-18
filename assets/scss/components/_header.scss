@@ -1,0 +1,49 @@
+// * General Header or Site Header
+header {
+  background-color: $white;
+}
+.top-bar {
+  background-color: $green1;
+  height: 15px;
+}
+.header__container{
+  position: relative;
+  height: 80px;
+  @include breakpoint($tablet){
+    height: 120px;
+  }
+  @include breakpoint($medLarge){
+    height: 140px;
+  }
+}
+.header__grey-background {
+  position: absolute;
+  bottom: 0;
+  background-color:$greyOpacity;
+  width: 100%;
+  height: 40px;
+  @include breakpoint($tablet){
+    height: 60px;
+  }
+  @include breakpoint($medLarge){
+    height: 70px;
+  }
+}
+.logo__container {
+  position: absolute;
+  z-index: 10;
+  left: calc(50% - (#{$mobileLogo} / 2));
+  width: $mobileLogo;
+  @include breakpoint($tablet){
+    width: $tabletLogo;
+    left: calc(50% - (#{$tabletLogo} / 2));
+  }
+  @include breakpoint($medLarge){
+    width: $desktopLogo;
+    left: calc(50% - (#{$desktopLogo} / 2));
+  }
+  .logo {
+    padding: 5px;
+    width: 100%;
+  }
+}

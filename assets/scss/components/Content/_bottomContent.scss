@@ -1,0 +1,20 @@
+.bottom-content{
+  @include default-sizing($xlarge);
+  text-align: center;
+  padding-top: 45px;
+  @include breakpoint($tablet){
+    padding-top: 75px;
+  }
+  h1 {
+    @include breakpoint($xlarge){
+      font-size: 90px;
+    }
+  }
+}
+.bottom-content__image{
+  max-width: 646px;
+  @include breakpoint($xlarge){
+    max-width: 896px;
+  }
+  margin: 0 auto;
+}

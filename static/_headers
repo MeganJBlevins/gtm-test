@@ -1,0 +1,5 @@
+/*
+  Content-Security-Policy: default-src 'self' data: *.vimeo.com *.youtube.com *.airtable.com *.google.com *.google-analytics.com *.ads.linkedin.com *.adobe.com/; script-src 'self' data: 'unsafe-inline' 'unsafe-eval' *.googleadservices.com *.polyfill.io *.google.com *.gstatic.com *.googletagmanager.com *.google-analytics.com *.licdn.com https://googleads.g.doubleclick.net *.ads.linkedin.com; font-src 'self' data: *.typekit.net *.google.com *.gstatic.com; style-src 'self' 'unsafe-inline' data: *.typekit.net *.googleapis.com *.licdn.com https://googleads.g.doubleclick.net *.ads.linkedin.com; report-uri https://2562ba4556c5dc55fac7709ffd7b97b7.report-uri.com/r/d/csp/enforce
+  X-XSS-Protection: 1
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN

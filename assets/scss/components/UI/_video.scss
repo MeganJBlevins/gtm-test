@@ -1,0 +1,33 @@
+.video__wrapper {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  margin-top: 42px;
+  margin-bottom: 42px;
+  @include breakpoint($medium){
+    margin-top: 52px;
+    margin-bottom: 52px;
+  }
+  @include breakpoint($medLarge){
+    padding-top: 51%;
+  }
+  .video, iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+.video {
+  @include breakpoint($tablet) {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  @include breakpoint($large){
+    @include default-sizing($larger);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
